@@ -21,7 +21,7 @@
     if(head && body){ body.id = 'sec-' + i; head.setAttribute('aria-controls', 'sec-' + i); }
   });
 
-  var topItems = document.querySelectorAll('#acc > .item, #acc2 > .item');
+  var topItems = document.querySelectorAll('#acc > .item, #acc2 > .item, #acc3 > .item');
   var tg = document.getElementById('toggleAll');
 
   function allOpen(){
