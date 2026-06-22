@@ -1,0 +1,21 @@
+/* tokens.css — design system: the single source of colors, type, spacing.
+   Change a value here and it propagates everywhere. */
+:root{
+  /* surfaces */
+  --bg:#0e0e0d;
+  --surf:#171612;
+  --surf2:#1f1d18;
+  --line:#2d2b26;
+  --line2:#3a3833;
+  /* text */
+  --text:#ededea;
+  --muted:#a4a29a;
+  --faint:#8c8a80;
+  /* accent + semantic */
+  --accent:#cbb79c;
+  --accent-bg:#241e15;
+  --ok:#9cc88a;
+  --no:#e0a08f;
+  /* type */
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}

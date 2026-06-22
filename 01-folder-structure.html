@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Folder structure · Workflow — Juan Villa</title>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="bt">Workflow</span><span class="bs">Juan Villa</span></a>
+    <button class="menu-btn" aria-label="Toggle navigation">Stages</button>
+    <p class="navlabel">Stages</p>
+    <nav class="nav">
+      <a class="nav-item active" href="01-folder-structure.html"><span class="num">01</span> Folder structure</a>
+      <span class="nav-item soon"><span class="num">02</span> Coming soon</span>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <div class="head-row">
+      <div>
+        <p class="eyebrow">Stage 01</p>
+        <h1>Project folder structure</h1>
+      </div>
+      <button class="toggle" id="toggleAll"><span class="tg-ic" aria-hidden="true"></span><span class="tg-label">Expand all</span></button>
+    </div>
+    <p class="lede">Every project follows the same layout. Folders are organized by <b>type of media</b>, not by stage. Open any folder to see what goes inside.</p>
+    <p class="sr-only">Type in the filter to jump to a folder, or activate any folder to reveal what goes inside.</p>
+
+    <div class="search">
+      <input id="q" type="search" placeholder="Type a format…  .mov · .wav · .drt" aria-label="Search formats or folders" autocomplete="off" spellcheck="false">
+    </div>
+    <p class="hint" id="hint" role="status" aria-live="polite" hidden></p>
+    <p class="noresults" id="noresults" role="status" aria-live="polite" hidden>No match — try a format like <code>.mov</code>, or browse the folders below.</p>
+
+    <p class="section-label">The folders</p>
+    <div class="acc" id="acc">
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">00_Deliver</span><span class="tag">exports for the client</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <div class="tree">
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">01_Master</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Approved deliverables — every format and resolution you hand off (16:9, vertical, square, social). A subtitle <code>.srt</code> sits next to the master it belongs to.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">02_Versions</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Review cuts sent for feedback before sign-off (<code>v1</code>, <code>v2</code>, fine cut).</p></div></div></div></div>
+          </div>
+          <div class="tips">
+            <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Internal-only renders → <code>05_Intermediates</code></span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">01_Project</span><span class="tag">the edit &amp; exchange files</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <div class="tree">
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">01_Resolve</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Your Resolve project backup (<code>.drp</code>). The edit lives here.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">02_Timelines</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Interchange files: DRT, XML, AAF, EDL.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">03_LUTs</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Color LUTs (<code>.cube</code>) used in the grade.</p></div></div></div></div>
+          </div>
+          <div class="tips">
+            <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>No media — footage and audio live in <code>02_Footage</code> / <code>03_Audio</code></span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">02_Footage</span><span class="tag">all video, by source</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <div class="tree">
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">01_Originals</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Footage your team shot. Each card/camera in its own folder; proxies inside that segment's <code>Proxy</code>.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">02_Stock</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Licensed stock clips.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">03_AI</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">AI-generated video.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">04_Provided</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Video the client or a third party gave you.</p></div></div></div></div>
+          </div>
+          <div class="tips">
+            <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Shot by your team → <code>01_Originals</code>. Otherwise Stock / AI / Provided.</span></div>
+            <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Never rename <code>01_Originals</code> — Resolve links by path.</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">03_Audio</span><span class="tag">all audio, by role</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <div class="tree">
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">01_Production</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Sound recorded on set / location: lav, boom, scratch.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">02_VO</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Voiceover and narration.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">03_SFX</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Sound effects, ambience and Foley.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">04_Music</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Music tracks (licensed or provided).</p></div></div></div></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">04_Graphics</span><span class="tag">visual assets, not footage</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <div class="tree">
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">01_Resources</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Raw ingredients: logos, fonts, brand kits, reference images.</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">02_Built</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Graphics you created or exported (titles, lower-thirds, end cards).</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">03_Stills</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Photos and frame grabs — including client or photographer photos.</p></div></div></div></div>
+          </div>
+          <div class="tips">
+            <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Client / photographer photos → <code>03_Stills</code></span></div>
+            <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Mood / reference images → <code>01_Resources</code></span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">05_Intermediates</span><span class="tag">temporary, regenerable</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <div class="tips first">
+            <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Transcodes, comps / VFX, pulls, sizzle drafts. Keep versions (<code>v1</code>, <code>v2</code>…).</span></div>
+            <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Don't leave empty folders.</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">06_Documents</span><span class="tag">paperwork &amp; notes</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <div class="tips first">
+            <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Brief, script, transcripts, contracts, Frame.io review EDLs (comment markers).</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
+    </div>
+
+    <p class="section-label spaced">Reference</p>
+    <div class="ref" id="acc2">
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Decision rules</span></button>
+        <div class="body"><div class="inner"><div class="pad" style="padding-left:18px;padding-top:2px">
+          <ul class="rules">
+            <li><b>Did your team shoot / record it?</b> &nbsp; video → <code>02_Footage/01_Originals</code> &nbsp;·&nbsp; audio → <code>03_Audio/01_Production</code></li>
+            <li><b>Acquired media (bought or given)?</b> &nbsp; video → Stock / AI / Provided &nbsp;·&nbsp; audio → Music / SFX / VO &nbsp;·&nbsp; photo → <code>04_Graphics/03_Stills</code></li>
+            <li><b>Something you rendered?</b> &nbsp; client sees it → <code>00_Deliver</code> &nbsp;·&nbsp; internal only → <code>05_Intermediates</code></li>
+            <li><b>A graphic asset?</b> &nbsp; raw ingredient → <code>04_Graphics/01_Resources</code> &nbsp;·&nbsp; your export → <code>04_Graphics/02_Built</code></li>
+            <li><b>Paperwork or a Frame.io EDL?</b> &nbsp; → <code>06_Documents</code></li>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">File naming</span></button>
+        <div class="body"><div class="inner"><div class="pad" style="padding-left:18px;padding-top:2px">
+          <ul class="rules">
+            <li>No spaces. Use <code>_</code>. Version with <code>_v01</code>, <code>_v02</code>, <code>_v03</code> — that's how we track revisions.<br>
+              Example: <code>KayleeGlatting_Highlight_v02.mov</code></li>
+          </ul>
+        </div></div></div>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="assets/js/formats.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
