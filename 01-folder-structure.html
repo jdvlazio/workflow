@@ -108,9 +108,11 @@
               <div class="body"><div class="inner"><div class="pad"><p class="sd">Sound effects, ambience and Foley.</p></div></div></div></div>
             <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">04_Music</span></button>
               <div class="body"><div class="inner"><div class="pad"><p class="sd">Music tracks (licensed or provided).</p></div></div></div></div>
+            <div class="item"><button class="head" aria-expanded="false"><span class="chev"></span><span class="sn">05_Processed</span></button>
+              <div class="body"><div class="inner"><div class="pad"><p class="sd">Externally processed audio you keep and cut with — Adobe Podcast, noise reduction, etc. A source the edit relinks to (<b>not</b> regenerable — never delete).</p></div></div></div></div>
           </div>
           <div class="tips">
-            <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Raw recordings only. Audio processed externally (Adobe Podcast, etc.) is a derivative, not an original → it lives in <code>05_Intermediates</code>.</span></div>
+            <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Processed/cleaned audio is a kept source, not an Intermediate (the edit depends on it) → <code>05_Processed</code>. <code>01_Production</code> stays raw originals.</span></div>
           </div>
         </div></div></div>
       </div>
@@ -137,7 +139,8 @@
         <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">05_Intermediates</span><span class="tag">temporary, regenerable</span></button>
         <div class="body"><div class="inner"><div class="pad">
           <div class="tips first">
-            <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Transcodes, comps / VFX, pulls, sizzle drafts. Audio you send out to process (Adobe Podcast) <b>and</b> the cleaned result both live here. Keep versions (<code>v1</code>, <code>v2</code>…).</span></div>
+            <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Transcodes, comps / VFX, pulls, sizzle drafts — anything you can re-create from the project. Keep versions (<code>v1</code>, <code>v2</code>…).</span></div>
+            <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>If the edit relinks to it and you can't re-create it, it's a <b>source</b>, not an Intermediate (e.g. cleaned audio → <code>03_Audio/05_Processed</code>).</span></div>
             <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Don't leave empty folders.</span></div>
           </div>
         </div></div></div>
