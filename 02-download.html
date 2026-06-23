@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Download · Workflow — Juan Villa</title>
+<link rel="stylesheet" href="assets/css/tokens.css?v=5">
+<link rel="stylesheet" href="assets/css/base.css?v=5">
+<link rel="stylesheet" href="assets/css/layout.css?v=5">
+<link rel="stylesheet" href="assets/css/components.css?v=5">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="bt">Workflow</span><span class="bs">Juan Villa</span></a>
+    <button class="menu-btn" aria-label="Toggle navigation">Stages</button>
+    <p class="navlabel">Stages</p>
+    <nav class="nav">
+      <a class="nav-item" href="01-folder-structure.html"><span class="num">01</span> Folder structure</a>
+      <a class="nav-item active" href="02-download.html"><span class="num">02</span> Download</a>
+      <span class="nav-item soon"><span class="num">03</span> Coming soon</span>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <p class="eyebrow">Stage 02</p>
+    <h1>Download the material</h1>
+    <p class="lede">The footage already lives in Frame.io, in the <b>same folders</b> as the project. You download what you need to edit <b>lightweight</b> — proxies and audio. The originals stay in Frame.io and get relinked later.</p>
+
+    <p class="section-label">How it works</p>
+    <div class="acc" id="acc">
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">What you download</span></button>
+        <div class="body"><div class="inner"><div class="pad" style="padding-left:20px;padding-top:2px">
+          <p class="sd" style="font-size:14px">Proxies + audio — to cut lightweight. <b style="color:var(--text)">Not the originals</b>: they stay in Frame.io / with Juan and get relinked at the end.</p>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">How you download</span></button>
+        <div class="body"><div class="inner"><div class="pad" style="padding-left:20px;padding-top:2px">
+          <p class="sd" style="font-size:14px"><b style="color:var(--text)">Frame.io Drive</b> (recommended) — mount the project as a volume and copy from it. The fast lane: local cache, optimized transfer.</p>
+          <p class="sd" style="font-size:14px;margin-top:6px"><b style="color:var(--text)">Frame.io web</b> — the Download button. Either works.</p>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Where it goes</span></button>
+        <div class="body"><div class="inner"><div class="pad" style="padding-left:20px;padding-top:2px">
+          <p class="sd" style="font-size:14px">Keep the folders exactly as they are — the project tool already created them and Frame.io mirrors them. Drop each file into its <b style="color:var(--text)">matching</b> folder:</p>
+          <p class="sd" style="font-size:13.5px;margin-top:8px">↳ each proxy → its segment's <code>02_Footage/01_Originals/&lt;segment&gt;/Proxy</code><br>↳ audio → its <code>03_Audio/01_Production</code> folder</p>
+        </div></div></div>
+      </div>
+
+    </div>
+
+    <p class="section-label spaced">Remember</p>
+    <div class="tips first">
+      <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Frame.io Drive is the fast lane — local cache, optimized transfer.</span></div>
+      <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>You cut with proxies; relinking to the originals happens later.</span></div>
+      <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Don't rename or move folders — Resolve relinks by path, and Frame.io mirrors them.</span></div>
+    </div>
+
+  </main>
+</div>
+
+<script src="assets/js/app.js?v=5"></script>
+</body>
+</html>
