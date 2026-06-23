@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Download · Workflow — Juan Villa</title>
-<link rel="stylesheet" href="assets/css/tokens.css?v=6">
-<link rel="stylesheet" href="assets/css/base.css?v=6">
-<link rel="stylesheet" href="assets/css/layout.css?v=6">
-<link rel="stylesheet" href="assets/css/components.css?v=6">
+<link rel="stylesheet" href="assets/css/tokens.css?v=7">
+<link rel="stylesheet" href="assets/css/base.css?v=7">
+<link rel="stylesheet" href="assets/css/layout.css?v=7">
+<link rel="stylesheet" href="assets/css/components.css?v=7">
 </head>
 <body>
 <div class="app">
@@ -28,34 +28,14 @@
 
     <p class="eyebrow">Stage 02</p>
     <h1>Download the material</h1>
-    <p class="lede">Juan uploads the proxies and audio to Frame.io, in the <b>same folders</b> as the project. You download them and edit with the proxies — the originals stay <b>with Juan</b>.</p>
+    <p class="lede">Juan puts the proxies and audio on Frame.io. You download them and edit with the proxies — the originals stay <b>with Juan</b>.</p>
 
     <p class="section-label">How it works</p>
-    <div class="acc" id="acc">
-
-      <div class="item">
-        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">What you download</span></button>
-        <div class="body"><div class="inner"><div class="pad" style="padding-left:20px;padding-top:2px">
-          <p class="sd" style="font-size:14px">Proxies + audio — that's all you need. <b style="color:var(--text)">You don't download the originals</b>; Juan keeps those.</p>
-        </div></div></div>
-      </div>
-
-      <div class="item">
-        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">How you download</span></button>
-        <div class="body"><div class="inner"><div class="pad" style="padding-left:20px;padding-top:2px">
-          <p class="sd" style="font-size:14px"><b style="color:var(--text)">Frame.io Drive</b> (recommended) — mount the project and copy. Or the <b style="color:var(--text)">Frame.io web</b> Download button. Either works.</p>
-        </div></div></div>
-      </div>
-
-      <div class="item">
-        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Where it goes</span></button>
-        <div class="body"><div class="inner"><div class="pad" style="padding-left:20px;padding-top:2px">
-          <p class="sd" style="font-size:14px">Keep the folders exactly as they are — the project tool already created them and Frame.io mirrors them. Drop each file into its <b style="color:var(--text)">matching</b> folder:</p>
-          <p class="sd" style="font-size:13.5px;margin-top:8px">↳ each proxy → its segment's <code>02_Footage/01_Originals/&lt;segment&gt;/Proxy</code><br>↳ audio → its <code>03_Audio/01_Production</code> folder</p>
-        </div></div></div>
-      </div>
-
-    </div>
+    <ol class="steps">
+      <li><span><span class="st">What you download</span><span class="sx">Proxies + audio — that's all you need. Not the originals; Juan keeps those.</span></span></li>
+      <li><span><span class="st">How you download</span><span class="sx"><b>Frame.io Drive</b> (recommended) — mount the project and copy. Or the Frame.io web Download button.</span></span></li>
+      <li><span><span class="st">Where it goes</span><span class="sx">Keep the folders as they are. Each proxy → its segment's <code>02_Footage/01_Originals/&lt;segment&gt;/Proxy</code>; audio → <code>03_Audio/01_Production</code>.</span></span></li>
+    </ol>
 
     <p class="section-label spaced">Remember</p>
     <div class="tips first">
@@ -64,9 +44,14 @@
       <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Don't rename or move folders — Resolve relinks by path, and Frame.io mirrors them.</span></div>
     </div>
 
+    <nav class="pagenav">
+      <a href="01-folder-structure.html"><span class="dir">← Prev</span><span class="pt">01 · Folder structure</span></a>
+      <a class="end" href="03-tasks-time.html"><span class="dir">Next →</span><span class="pt">03 · Tasks &amp; time</span></a>
+    </nav>
+
   </main>
 </div>
 
-<script src="assets/js/app.js?v=6"></script>
+<script src="assets/js/app.js?v=7"></script>
 </body>
 </html>
