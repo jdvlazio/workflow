@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Workflow — Juan Villa</title>
-<link rel="stylesheet" href="assets/css/tokens.css?v=8">
-<link rel="stylesheet" href="assets/css/base.css?v=8">
-<link rel="stylesheet" href="assets/css/layout.css?v=8">
-<link rel="stylesheet" href="assets/css/components.css?v=8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css?v=9">
+<link rel="stylesheet" href="assets/css/base.css?v=9">
+<link rel="stylesheet" href="assets/css/layout.css?v=9">
+<link rel="stylesheet" href="assets/css/components.css?v=9">
 </head>
 <body>
 <div class="app">
@@ -28,7 +31,7 @@
 
     <p class="eyebrow">Team handbook</p>
     <h1>Editing workflow</h1>
-    <p class="lede">How we run a project end to end. Each stage is one step of the process — follow them in order.</p>
+    <p class="lede">How we run a project end to end. Four stages, in order — open a card to follow along.</p>
 
     <nav class="stepper" aria-label="The pipeline">
       <a class="step" href="01-folder-structure.html"><span class="dot">01</span><span class="lb">Structure</span></a>
@@ -37,42 +40,31 @@
       <span class="step soon"><span class="dot">04</span><span class="lb">Edit</span></span>
     </nav>
 
-    <p class="section-label spaced">Stages</p>
-    <div class="stagelist">
+    <p class="section-label spaced">Open a stage</p>
+    <div class="cardgrid">
 
-      <a class="stage" href="01-folder-structure.html">
-        <span class="snum">01</span>
-        <span>
-          <span class="stitle">Project folder structure</span>
-          <span class="sdesc">Where every file lives — folder by folder.</span>
-        </span>
-        <span class="arrow" aria-hidden="true">→</span>
+      <a class="scard" href="01-folder-structure.html">
+        <div class="scard-top"><span class="scard-ic">01</span><span class="scard-meta">Reference</span></div>
+        <p class="scard-t">Folder structure</p>
+        <p class="scard-d">Where every file lives. Find a format or browse the tree.</p>
       </a>
 
-      <a class="stage" href="02-download.html">
-        <span class="snum">02</span>
-        <span>
-          <span class="stitle">Download the material</span>
-          <span class="sdesc">Pull proxies + audio from Frame.io to edit lightweight.</span>
-        </span>
-        <span class="arrow" aria-hidden="true">→</span>
+      <a class="scard" href="02-download.html">
+        <div class="scard-top"><span class="scard-ic">02</span><span class="scard-meta">Every project</span></div>
+        <p class="scard-t">Download</p>
+        <p class="scard-d">Pull proxies and audio from Frame.io to edit light.</p>
       </a>
 
-      <a class="stage" href="03-tasks-time.html">
-        <span class="snum">03</span>
-        <span>
-          <span class="stitle">Tasks &amp; time</span>
-          <span class="sdesc">Asana board, find your task, track time in TMetric.</span>
-        </span>
-        <span class="arrow" aria-hidden="true">→</span>
+      <a class="scard" href="03-tasks-time.html">
+        <div class="scard-top"><span class="scard-ic">03</span><span class="scard-meta">Every project</span></div>
+        <p class="scard-t">Tasks &amp; time</p>
+        <p class="scard-d">Find your task in Asana, track time in TMetric.</p>
       </a>
 
-      <span class="stage soon">
-        <span class="snum">04</span>
-        <span>
-          <span class="stitle">More stages coming</span>
-          <span class="sdesc">Editing, review, delivery…</span>
-        </span>
+      <span class="scard soon">
+        <div class="scard-top"><span class="scard-ic">04</span><span class="scard-meta">Soon</span></div>
+        <p class="scard-t">Editing</p>
+        <p class="scard-d">Selections, timelines, delivery.</p>
       </span>
 
     </div>
@@ -80,6 +72,6 @@
   </main>
 </div>
 
-<script src="assets/js/app.js?v=8"></script>
+<script src="assets/js/app.js?v=9"></script>
 </body>
 </html>

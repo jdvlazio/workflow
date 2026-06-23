@@ -3,12 +3,13 @@
 :root{
   /* surfaces */
   --bg:#0e0e0d;
-  --surf:#171612;
+  --surf:#15140f;
   --surf2:#1f1d18;
   --line:#2d2b26;
   --line2:#3a3833;
   /* text */
   --text:#ededea;
+  --text2:#cfcdc6;
   --muted:#a4a29a;
   --faint:#8c8a80;
   /* accent + semantic */
@@ -16,16 +17,18 @@
   --accent-bg:#241e15;
   --ok:#9cc88a;
   --no:#e0a08f;
-  /* type family */
+  /* families */
+  --display:'Bricolage Grotesque',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
 
-  /* type scale — 6 roles, real jumps (was ~11 near-identical sizes) */
-  --fs-micro:11.5px;   /* uppercase tracking labels: eyebrow, section-label, nav, stepper */
-  --fs-caption:12.5px; /* code, tags, metadata, secondary descriptions */
-  --fs-body:14px;      /* running text, steps, tips, list titles */
-  --fs-lead:17px;      /* lede / intro */
-  --fs-h2:20px;        /* in-page block heading (orient) */
-  --fs-h1:32px;        /* page title */
+  /* type scale — editorial, larger (body was 14, now 16) */
+  --fs-micro:12px;     /* uppercase tracking labels */
+  --fs-caption:13.5px; /* code, tags, metadata */
+  --fs-body:16px;      /* running text, steps, tips */
+  --fs-lead:19px;      /* lede / intro */
+  --fs-h3:20px;        /* card titles (display) */
+  --fs-h2:24px;        /* section headline (display) */
+  --fs-h1:34px;        /* page title (display) */
 
   /* spacing scale — 4px base */
   --s1:4px;
@@ -38,9 +41,8 @@
   --s8:64px;
 
   /* semantic spacing + shape */
-  --section-gap:var(--s8);  /* breathing room between major bands */
-  --pad-card:var(--s4);     /* inner padding of clickable cards */
-  --measure:68ch;           /* readable line length for running text */
-  --radius:13px;
-  --radius-sm:9px;
+  --section-gap:72px;  /* breathing room between major bands */
+  --measure:62ch;      /* readable line length for running text */
+  --radius:14px;
+  --radius-sm:10px;
 }
