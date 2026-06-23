@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tasks &amp; time · Workflow — Juan Villa</title>
+<link rel="stylesheet" href="assets/css/tokens.css?v=6">
+<link rel="stylesheet" href="assets/css/base.css?v=6">
+<link rel="stylesheet" href="assets/css/layout.css?v=6">
+<link rel="stylesheet" href="assets/css/components.css?v=6">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="bt">Workflow</span><span class="bs">Juan Villa</span></a>
+    <button class="menu-btn" aria-label="Toggle navigation">Stages</button>
+    <p class="navlabel">Stages</p>
+    <nav class="nav">
+      <a class="nav-item" href="01-folder-structure.html"><span class="num">01</span> Folder structure</a>
+      <a class="nav-item" href="02-download.html"><span class="num">02</span> Download</a>
+      <a class="nav-item active" href="03-tasks-time.html"><span class="num">03</span> Tasks &amp; time</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <p class="eyebrow">Stage 03</p>
+    <h1>Tasks &amp; time</h1>
+    <p class="lede">Before you edit, everything runs through <b>Asana</b>. Find your task, open the project Juan sends, and track your time against that task with <b>TMetric</b>.</p>
+
+    <p class="section-label">The board</p>
+    <p class="sd" style="font-size:14px;margin:0 0 12px">Every project is one board with three columns — the stage the work is in:</p>
+    <div class="board">
+      <div class="col"><span class="cn">Pre</span><span class="cd">Prep — download the material.</span></div>
+      <div class="col"><span class="cn">Post</span><span class="cd">The edit — your work lives here.</span></div>
+      <div class="col"><span class="cn">Deliver</span><span class="cd">Exports that go to the client.</span></div>
+    </div>
+    <p class="sd" style="font-size:14px;margin:16px 0 0">Each task is named <code>prefix | name | version</code> and carries a <b style="color:var(--text)">tag</b> for the type of work:</p>
+    <ul class="legend">
+      <li><span class="lc">D&nbsp;|</span><span><b>Download</b> · Pre — pull the material. <b>No time tracking</b> — just mark it done so the stage is clear.</span></li>
+      <li><span class="lc">S&nbsp;|</span><span><b>Selections</b> · Post — narrow the footage down.</span></li>
+      <li><span class="lc">E&nbsp;|</span><span><b>Editing</b> · Post — the first cut (v1).</span></li>
+      <li><span class="lc">AD&nbsp;|</span><span><b>Adjustments</b> · Post — revision rounds (v2, v3…).</span></li>
+      <li><span class="lc">D&nbsp;|</span><span><b>Deliver</b> · Deliver — the client export.</span></li>
+    </ul>
+
+    <p class="section-label spaced">Each task</p>
+    <ol class="steps">
+      <li><span><span class="st">Open your task in Asana</span><span class="sx">Read the <b>brief</b> in the description and note the <b>due date</b>.</span></span></li>
+      <li><span><span class="st">Open the project file</span><span class="sx">Juan attaches the <code>.drp</code> with everything loaded. Save it in your project's <code>01_Project/01_Resolve</code> and open it — the proxies relink.</span></span></li>
+      <li><span><span class="st">Start the timer from the task</span><span class="sx">Hit the green <b>Start timer</b> on the Asana task. The <b>first time</b> you work a project, pick the project in TMetric so the entry files correctly.</span></span></li>
+      <li><span><span class="st">Keep TMetric + Asana open in the browser</span><span class="sx">Check <code>task · tag · project</code> are right, and stop/play the timer as you work.</span></span></li>
+      <li><span><span class="st">Track only Selections &amp; Editing</span><span class="sx">Download isn't timed. Time runs on the <b>Selections</b>, <b>Editing</b> and <b>Adjustments</b> tasks — the real work.</span></span></li>
+    </ol>
+
+    <p class="section-label spaced">One-time setup</p>
+    <div class="acc" id="acc">
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Install once on your machine</span></button>
+        <div class="body"><div class="inner"><div class="pad" style="padding-left:20px;padding-top:2px">
+          <p class="sd" style="font-size:13.5px">Do this once, then you're set for every project.</p>
+          <p class="sd" style="font-size:13.5px;margin-top:12px"><b style="color:var(--text)">1 · TMetric Desktop (Mac)</b><br>Watches idle time in the background. In settings, set <b style="color:var(--text)">Detect idle time → Ask me</b> with a <b style="color:var(--text)">5 minute</b> timeout. If you step away that long, it asks what to do with the time — keep, discard, or mark as a break.</p>
+          <p class="sd" style="font-size:13.5px;margin-top:12px"><b style="color:var(--text)">2 · TMetric browser extension</b><br>Install it, then turn on the <b style="color:var(--text)">Asana integration</b> (TMetric → Integrations → Asana). Refresh Asana — a green <b style="color:var(--text)">Start timer</b> button appears on every task.</p>
+        </div></div></div>
+      </div>
+    </div>
+
+    <p class="section-label spaced">Remember</p>
+    <div class="tips first">
+      <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Read the <b>brief</b> before you touch anything.</span></div>
+      <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Keep <b>TMetric + Asana</b> open in the browser the whole session.</span></div>
+      <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Don't trust the timer blindly — wrong <b>task / tag / project</b> means time logged in the wrong place.</span></div>
+    </div>
+
+  </main>
+</div>
+
+<script src="assets/js/app.js?v=6"></script>
+</body>
+</html>
