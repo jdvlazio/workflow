@@ -60,8 +60,8 @@
 .tip b{color:var(--text);font-weight:600}
 
 /* reference rows */
-.ref{display:flex;flex-direction:column;border-top:1px solid var(--line)}
-.ref>.item{background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;overflow:hidden}
+.ref{display:flex;flex-direction:column;gap:2px}
+.ref>.item{background:transparent;border:0;border-radius:0;overflow:hidden}
 .ref>.item>.head{padding:15px 4px}
 .ref>.item>.head:hover{background:transparent}
 .ref>.item>.head:hover .rl{color:var(--accent)}
