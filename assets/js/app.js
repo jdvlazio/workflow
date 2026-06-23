@@ -71,33 +71,49 @@
     updateToggle();
   }
   function resolveExt(ext){
-    var t = EXT[ext];
-    if(t && t.note){ showNote(ext, t.note); return; }
-    var folder = Array.isArray(t) ? t[0] : t;
-    var sub = Array.isArray(t) ? t[1] : null;
+    var v = EXT[ext];
+    if(v && v.note){ showNote(ext, v.note); return; }
+    var opts = v.opts;                          // [[dest, when?], ...]
+    var single = opts.length === 1;
+    var topName = {};                           // carpetas raíz involucradas
+    var subByTop = {};                          // sub a resaltar por carpeta raíz (solo destino único)
+    opts.forEach(function(o){
+      var parts = o[0].split('/');
+      topName[parts[0]] = true;
+      if(single && parts[1]) subByTop[parts[0]] = parts[1];
+    });
     Array.prototype.forEach.call(topItems, function(top){
       var fnEl = top.querySelector(':scope > .head .fn');
-      var isTarget = fnEl && fnEl.textContent.trim() === folder;
+      var nameTop = fnEl ? fnEl.textContent.trim() : '';
+      var isTarget = !!topName[nameTop];
       top.hidden = !isTarget;
       top.classList.toggle('open', isTarget);
       setExpanded(top, isTarget);
       if(!isTarget) return;
       var subs = [].slice.call(top.querySelectorAll(':scope .tree > .item'));
-      if(sub){
+      var sub = subByTop[nameTop];
+      if(sub){                                   // destino único con subcarpeta → resáltala
         top.classList.remove('match');
         subs.forEach(function(s){
           var sn = s.querySelector(':scope > .head .sn');
           var m = sn && sn.textContent.trim() === sub;
           s.hidden = !m; s.classList.toggle('open', m); s.classList.toggle('match', m); setExpanded(s, m);
         });
-      } else {
+      } else {                                   // ambiguo / carpeta raíz → resalta la carpeta, muestra subs
         top.classList.add('match');
         subs.forEach(function(s){ s.hidden = false; s.classList.remove('open','match'); setExpanded(s, false); });
       }
     });
     if(hint){
       hint.hidden = false;
-      hint.innerHTML = '<code>.' + ext + '</code> &rarr; <code>' + folder + (sub ? ' / ' + sub : '') + '</code>';
+      if(single){
+        hint.innerHTML = '<code>.' + ext + '</code> &rarr; <code>' + opts[0][0] + '</code>'
+                       + (opts[0][1] ? ' · ' + opts[0][1] : '');
+      } else {
+        var h = '<code>.' + ext + '</code> — depends on what it is:<ul class="opts">';
+        opts.forEach(function(o){ h += '<li><code>' + o[0] + '</code> — ' + o[1] + '</li>'; });
+        hint.innerHTML = h + '</ul>';
+      }
     }
     if(nores) nores.hidden = true;
     updateToggle();

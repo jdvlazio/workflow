@@ -18,6 +18,9 @@
 .search input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .noresults{color:var(--muted);font-size:14px;margin:0 0 18px}
 .hint{color:var(--muted);font-size:14px;margin:0 0 18px}
+.hint .opts{margin:7px 0 0;padding-left:18px;list-style:none}
+.hint .opts li{margin:4px 0;position:relative}
+.hint .opts li::before{content:"→";position:absolute;left:-18px;color:var(--accent)}
 
 /* accordion (folders) */
 .acc{display:flex;flex-direction:column;gap:9px}
