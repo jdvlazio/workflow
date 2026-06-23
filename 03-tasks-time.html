@@ -31,20 +31,39 @@
     <p class="lede">Before you edit, everything runs through <b>Asana</b>. Find your task, open the project Juan sends, and track your time on that task with <b>TMetric</b>.</p>
 
     <p class="section-label">The board</p>
-    <p class="sd" style="font-size:14px;margin:0 0 12px">Every project is one board with three columns — the stage the work is in:</p>
-    <div class="board">
-      <div class="col"><span class="cn">Pre</span><span class="cd">Prep — download the material.</span></div>
-      <div class="col"><span class="cn">Post</span><span class="cd">The edit — your work lives here.</span></div>
-      <div class="col"><span class="cn">Deliver</span><span class="cd">Exports that go to the client.</span></div>
+    <p class="sd" style="font-size:14px;margin:0 0 12px">Every project is one board with three columns. Open one to see its tasks — each named <code>prefix | name | version</code>.</p>
+    <div class="acc" id="acc">
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">Pre</span><span class="tag">prep, before the edit</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <ul class="legend" style="margin:0">
+            <li><span class="lc">D&nbsp;|</span><span><b>Download</b> — pull the material. <b>Not time-tracked</b>; just mark it done so the stage is clear.</span></li>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">Post</span><span class="tag">the edit — your work</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <ul class="legend" style="margin:0">
+            <li><span class="lc">S&nbsp;|</span><span><b>Selections</b> — narrow down the footage.</span></li>
+            <li><span class="lc">E&nbsp;|</span><span><b>Editing</b> — the first cut (v1).</span></li>
+            <li><span class="lc">AD&nbsp;|</span><span><b>Adjustments</b> — revision rounds (v2, v3…).</span></li>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">Deliver</span><span class="tag">exports for the client</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <ul class="legend" style="margin:0">
+            <li><span class="lc">D&nbsp;|</span><span><b>Deliver</b> — the client export.</span></li>
+          </ul>
+        </div></div></div>
+      </div>
+
     </div>
-    <p class="sd" style="font-size:14px;margin:16px 0 0">Each task is named <code>prefix | name | version</code> and carries a <b style="color:var(--text)">tag</b> for the type of work:</p>
-    <ul class="legend">
-      <li><span class="lc">D&nbsp;|</span><span><b>Download</b> · Pre — pull the material. <b>No time tracking</b> — just mark it done so the stage is clear.</span></li>
-      <li><span class="lc">S&nbsp;|</span><span><b>Selections</b> · Post — narrow down the footage.</span></li>
-      <li><span class="lc">E&nbsp;|</span><span><b>Editing</b> · Post — the first cut (v1).</span></li>
-      <li><span class="lc">AD&nbsp;|</span><span><b>Adjustments</b> · Post — revision rounds (v2, v3…).</span></li>
-      <li><span class="lc">D&nbsp;|</span><span><b>Deliver</b> · Deliver — the client export.</span></li>
-    </ul>
 
     <p class="section-label spaced">Each task</p>
     <ol class="steps">
@@ -56,7 +75,7 @@
     </ol>
 
     <p class="section-label spaced">One-time setup</p>
-    <div class="acc" id="acc">
+    <div class="acc" id="acc2">
       <div class="item">
         <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Install once on your machine</span></button>
         <div class="body"><div class="inner"><div class="pad" style="padding-left:20px;padding-top:2px">
