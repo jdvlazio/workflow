@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Folder structure · Workflow — Juan Villa</title>
-<link rel="stylesheet" href="assets/css/tokens.css?v=7">
-<link rel="stylesheet" href="assets/css/base.css?v=7">
-<link rel="stylesheet" href="assets/css/layout.css?v=7">
-<link rel="stylesheet" href="assets/css/components.css?v=7">
+<link rel="stylesheet" href="assets/css/tokens.css?v=8">
+<link rel="stylesheet" href="assets/css/base.css?v=8">
+<link rel="stylesheet" href="assets/css/layout.css?v=8">
+<link rel="stylesheet" href="assets/css/components.css?v=8">
 </head>
 <body>
 <div class="app">
@@ -26,23 +26,49 @@
 
   <main class="content">
 
-    <div class="head-row">
-      <div>
-        <p class="eyebrow">Stage 01</p>
-        <h1>Project folder structure</h1>
-      </div>
-      <button class="toggle" id="toggleAll"><span class="tg-ic" aria-hidden="true"></span><span class="tg-label">Expand all</span></button>
-    </div>
-    <p class="lede">Every project follows the same layout. Folders are organized by <b>type of media</b>, not by stage. Open any folder to see what goes inside.</p>
-    <p class="sr-only">Type in the filter to jump to a folder, or activate any folder to reveal what goes inside.</p>
+    <nav class="stepper" aria-label="Progress">
+      <a class="step current" href="01-folder-structure.html"><span class="dot">01</span><span class="lb">Structure</span></a>
+      <a class="step" href="02-download.html"><span class="dot">02</span><span class="lb">Files</span></a>
+      <a class="step" href="03-tasks-time.html"><span class="dot">03</span><span class="lb">Tasks</span></a>
+      <span class="step soon"><span class="dot">04</span><span class="lb">Edit</span></span>
+    </nav>
 
+    <p class="eyebrow">Stage 01</p>
+    <h1>Project folder structure</h1>
+
+    <div class="orient">
+      <span class="freq">Reference</span>
+      <p>Where every file lives. Folders are organized by <b>type of media</b>, not by stage. Type a format to find its folder, or browse the full structure below.</p>
+    </div>
+
+    <p class="section-label">Find where a file goes</p>
     <div class="search">
       <input id="q" type="search" placeholder="Type a format…  .mov · .wav · .drt" aria-label="Search formats or folders" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="chips" aria-label="Examples">
+      <button class="chip" data-q=".mov">.mov</button>
+      <button class="chip" data-q=".wav">.wav</button>
+      <button class="chip" data-q=".png">.png</button>
+      <button class="chip" data-q=".cube">.cube</button>
+      <button class="chip" data-q=".drt">.drt</button>
     </div>
     <p class="hint" id="hint" role="status" aria-live="polite" hidden></p>
     <p class="noresults" id="noresults" role="status" aria-live="polite" hidden>No match — try a format like <code>.mov</code>, or browse the folders below.</p>
 
-    <p class="section-label">The folders</p>
+    <p class="section-label spaced">Decision rules</p>
+    <ul class="rules">
+      <li><b>Did your team shoot / record it?</b> &nbsp; video → <code>02_Footage/01_Originals</code> &nbsp;·&nbsp; audio → <code>03_Audio/01_Production</code></li>
+      <li><b>Acquired media (bought or given)?</b> &nbsp; video → Stock / AI / Provided &nbsp;·&nbsp; audio → Music / SFX / VO &nbsp;·&nbsp; photo → <code>04_Graphics/03_Stills</code></li>
+      <li><b>Something you rendered?</b> &nbsp; client sees it → <code>00_Deliver</code> &nbsp;·&nbsp; internal only → <code>05_Intermediates</code></li>
+      <li><b>A graphic asset?</b> &nbsp; raw ingredient → <code>04_Graphics/01_Resources</code> &nbsp;·&nbsp; your export → <code>04_Graphics/02_Built</code></li>
+      <li><b>Paperwork or a Frame.io EDL?</b> &nbsp; → <code>06_Documents</code></li>
+    </ul>
+
+    <div class="head-row spaced-row">
+      <p class="section-label">Browse the full structure</p>
+      <button class="toggle" id="toggleAll"><span class="tg-ic" aria-hidden="true"></span><span class="tg-label">Expand all</span></button>
+    </div>
+    <p class="sr-only">Type in the filter above to jump to a folder, or activate any folder to reveal what goes inside.</p>
     <div class="acc" id="acc">
 
       <div class="item">
@@ -162,21 +188,8 @@
     <div class="ref" id="acc2">
 
       <div class="item">
-        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Decision rules</span></button>
-        <div class="body"><div class="inner"><div class="pad" style="padding-left:18px;padding-top:2px">
-          <ul class="rules">
-            <li><b>Did your team shoot / record it?</b> &nbsp; video → <code>02_Footage/01_Originals</code> &nbsp;·&nbsp; audio → <code>03_Audio/01_Production</code></li>
-            <li><b>Acquired media (bought or given)?</b> &nbsp; video → Stock / AI / Provided &nbsp;·&nbsp; audio → Music / SFX / VO &nbsp;·&nbsp; photo → <code>04_Graphics/03_Stills</code></li>
-            <li><b>Something you rendered?</b> &nbsp; client sees it → <code>00_Deliver</code> &nbsp;·&nbsp; internal only → <code>05_Intermediates</code></li>
-            <li><b>A graphic asset?</b> &nbsp; raw ingredient → <code>04_Graphics/01_Resources</code> &nbsp;·&nbsp; your export → <code>04_Graphics/02_Built</code></li>
-            <li><b>Paperwork or a Frame.io EDL?</b> &nbsp; → <code>06_Documents</code></li>
-          </ul>
-        </div></div></div>
-      </div>
-
-      <div class="item">
         <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">File naming</span></button>
-        <div class="body"><div class="inner"><div class="pad" style="padding-left:18px;padding-top:2px">
+        <div class="body"><div class="inner"><div class="pad">
           <ul class="rules">
             <li>No spaces. Use <code>_</code>. Version with <code>_v01</code>, <code>_v02</code>, <code>_v03</code> — that's how we track revisions.<br>
               Example: <code>KayleeGlatting_Highlight_v02.mov</code></li>
@@ -184,13 +197,9 @@
         </div></div></div>
       </div>
 
-    </div>
-
-    <p class="section-label spaced">Template</p>
-    <div class="ref" id="acc3">
       <div class="item">
-        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Post Haste</span></button>
-        <div class="body"><div class="inner"><div class="pad" style="padding-left:18px;padding-top:2px">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Post Haste template</span><span class="tag">builds this structure</span></button>
+        <div class="body"><div class="inner"><div class="pad">
           <a class="download" href="assets/downloads/1_Audiovisual_Project.pht.zip" download>
             <span class="dl-ic" aria-hidden="true">↓</span>
             <span>
@@ -200,6 +209,7 @@
           </a>
         </div></div></div>
       </div>
+
     </div>
 
     <nav class="pagenav">
@@ -210,7 +220,7 @@
   </main>
 </div>
 
-<script src="assets/js/formats.js?v=7"></script>
-<script src="assets/js/app.js?v=7"></script>
+<script src="assets/js/formats.js?v=8"></script>
+<script src="assets/js/app.js?v=8"></script>
 </body>
 </html>

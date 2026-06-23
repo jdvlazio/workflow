@@ -170,4 +170,9 @@
   }
   q.addEventListener('input', applyFilter);
   q.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ q.value = ''; applyFilter(); q.blur(); } });
+
+  // Example chips seed the search
+  document.querySelectorAll('.chip[data-q]').forEach(function(c){
+    c.addEventListener('click', function(){ q.value = c.getAttribute('data-q'); applyFilter(); q.focus(); });
+  });
 })();

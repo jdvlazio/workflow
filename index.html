@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Workflow — Juan Villa</title>
-<link rel="stylesheet" href="assets/css/tokens.css?v=7">
-<link rel="stylesheet" href="assets/css/base.css?v=7">
-<link rel="stylesheet" href="assets/css/layout.css?v=7">
-<link rel="stylesheet" href="assets/css/components.css?v=7">
+<link rel="stylesheet" href="assets/css/tokens.css?v=8">
+<link rel="stylesheet" href="assets/css/base.css?v=8">
+<link rel="stylesheet" href="assets/css/layout.css?v=8">
+<link rel="stylesheet" href="assets/css/components.css?v=8">
 </head>
 <body>
 <div class="app">
@@ -28,9 +28,16 @@
 
     <p class="eyebrow">Team handbook</p>
     <h1>Editing workflow</h1>
-    <p class="lede">How we run a project end to end. Each stage below is one step of the process — open it to follow along.</p>
+    <p class="lede">How we run a project end to end. Each stage is one step of the process — follow them in order.</p>
 
-    <p class="section-label">Stages</p>
+    <nav class="stepper" aria-label="The pipeline">
+      <a class="step" href="01-folder-structure.html"><span class="dot">01</span><span class="lb">Structure</span></a>
+      <a class="step" href="02-download.html"><span class="dot">02</span><span class="lb">Files</span></a>
+      <a class="step" href="03-tasks-time.html"><span class="dot">03</span><span class="lb">Tasks</span></a>
+      <span class="step soon"><span class="dot">04</span><span class="lb">Edit</span></span>
+    </nav>
+
+    <p class="section-label spaced">Stages</p>
     <div class="stagelist">
 
       <a class="stage" href="01-folder-structure.html">
@@ -73,6 +80,6 @@
   </main>
 </div>
 
-<script src="assets/js/app.js?v=7"></script>
+<script src="assets/js/app.js?v=8"></script>
 </body>
 </html>

@@ -16,6 +16,31 @@
   --accent-bg:#241e15;
   --ok:#9cc88a;
   --no:#e0a08f;
-  /* type */
+  /* type family */
   --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  /* type scale — 6 roles, real jumps (was ~11 near-identical sizes) */
+  --fs-micro:11.5px;   /* uppercase tracking labels: eyebrow, section-label, nav, stepper */
+  --fs-caption:12.5px; /* code, tags, metadata, secondary descriptions */
+  --fs-body:14px;      /* running text, steps, tips, list titles */
+  --fs-lead:17px;      /* lede / intro */
+  --fs-h2:20px;        /* in-page block heading (orient) */
+  --fs-h1:32px;        /* page title */
+
+  /* spacing scale — 4px base */
+  --s1:4px;
+  --s2:8px;
+  --s3:12px;
+  --s4:16px;
+  --s5:24px;
+  --s6:32px;
+  --s7:48px;
+  --s8:64px;
+
+  /* semantic spacing + shape */
+  --section-gap:var(--s8);  /* breathing room between major bands */
+  --pad-card:var(--s4);     /* inner padding of clickable cards */
+  --measure:68ch;           /* readable line length for running text */
+  --radius:13px;
+  --radius-sm:9px;
 }
