@@ -17,6 +17,8 @@
   --accent-bg:#241e15;
   --ok:#9cc88a;
   --no:#e0a08f;
+  --no-bg:#2a1714;
+  --no-line:#5a2f26;
   /* families */
   --display:'Bricolage Grotesque',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,monospace;

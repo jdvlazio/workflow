@@ -140,6 +140,56 @@
 .pagenav a:hover .pt{color:var(--accent)}
 .pagenav .soon .pt{color:var(--faint);opacity:.7}
 
+/* ── dismissible setup banner ── */
+.banner{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--accent-bg);border:1px solid var(--line2);border-radius:11px;padding:12px 15px;margin:0 0 var(--s5)}
+.banner a{font-size:var(--fs-body);color:var(--accent);text-decoration:none}
+.banner a:hover{text-decoration:underline}
+.banner .bx{background:none;border:0;color:var(--faint);font:inherit;font-size:19px;cursor:pointer;line-height:1;padding:0 2px}
+.banner .bx:hover{color:var(--text)}
+
+/* ── focus flow (the DO-NOW deck: one action at a time) ── */
+.flow-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--s2)}
+.flow-counter{font-family:var(--mono);font-size:var(--fs-caption);font-weight:600;color:var(--accent)}
+.flow-back{background:none;border:0;color:var(--faint);font:inherit;font-size:var(--fs-caption);cursor:pointer;padding:0}
+.flow-back:hover{color:var(--text)}
+.flow-bar{height:4px;background:var(--surf2);border-radius:999px;overflow:hidden;margin-bottom:var(--s5)}
+.flow-bar-fill{height:100%;width:25%;background:var(--accent);border-radius:999px;transition:width .25s ease}
+.flow-trail{display:flex;flex-direction:column;gap:var(--s2);margin-bottom:var(--s4)}
+.flow-trail:empty{display:none}
+.flow-trail .done{display:flex;align-items:center;gap:10px;font-size:var(--fs-body);color:var(--faint)}
+.flow-trail .done .tk{color:var(--ok)}
+.flow-trail .done .tt{text-decoration:line-through}
+
+.fcard{display:none}
+.fcard.active{display:block}
+.fcard .fc{background:var(--surf2);border:1px solid var(--line2);border-radius:var(--radius);padding:var(--s5) var(--s5) var(--s4)}
+.fc-t{font-size:var(--fs-lead);font-weight:600;color:var(--text);margin:0 0 var(--s2)}
+.fc-b{font-size:var(--fs-body);line-height:1.65;color:var(--muted);margin:0 0 var(--s4)}
+.fc-b b{color:var(--text);font-weight:600}
+.path{display:inline-flex;align-items:center;gap:8px;background:var(--surf);border:1px solid var(--line);border-radius:8px;padding:8px 13px;font-family:var(--mono);font-size:var(--fs-caption);color:var(--accent);margin:0 0 var(--s4)}
+.path .sep{color:var(--faint)}
+.watch{display:flex;gap:10px;background:var(--no-bg);border:1px solid var(--no-line);border-radius:9px;padding:11px 14px;margin:0 0 var(--s4);font-size:var(--fs-caption);line-height:1.55;color:var(--no)}
+.branch{background:var(--surf);border:1px dashed var(--line);border-radius:9px;padding:13px 15px;margin:0 0 var(--s4)}
+.branch .bl{font-size:var(--fs-micro);text-transform:uppercase;letter-spacing:.06em;font-weight:600;color:var(--accent)}
+.branch p{font-size:var(--fs-caption);line-height:1.6;color:var(--muted);margin:5px 0 0}
+.why{background:none;border:0;color:var(--faint);font:inherit;font-size:var(--fs-caption);cursor:pointer;padding:0;margin:0 0 var(--s3);display:block}
+.why:hover{color:var(--text)}
+.why-body{font-size:var(--fs-caption);line-height:1.6;color:var(--faint);margin:0 0 var(--s4);border-left:2px solid var(--line2);padding-left:12px;display:none}
+.why-body.open{display:block}
+.next-btn{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:var(--bg);border:0;border-radius:9px;padding:11px 19px;font:inherit;font-size:var(--fs-body);font-weight:600;cursor:pointer;transition:.15s}
+.next-btn:hover{filter:brightness(1.06)}
+.next-btn:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+
+.flow-done{display:none;background:var(--surf);border:1px solid var(--line2);border-radius:var(--radius);padding:var(--s6) var(--s5);text-align:center}
+.flow-done.show{display:block}
+.flow-done .fd-ok{font-size:var(--fs-body);color:var(--ok);margin:0 0 var(--s1)}
+.flow-done .fd-t{font-family:var(--display);font-size:var(--fs-h3);font-weight:600;color:var(--text);margin:0 0 var(--s4);letter-spacing:-.01em}
+.flow-done .fd-next{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:var(--bg);border-radius:9px;padding:11px 19px;font-size:var(--fs-body);font-weight:600;text-decoration:none}
+.flow-done .fd-next.soon{background:var(--surf2);color:var(--faint)}
+
+/* reference shelf label (Zone C) */
+.shelf-label{font-size:var(--fs-micro);text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin:var(--section-gap) 0 var(--s3)}
+
 /* ── component responsive tweaks ── */
 @media (max-width:860px){
   .tag{flex-basis:100%;margin-left:0;text-align:left;padding-left:20px;margin-top:3px}

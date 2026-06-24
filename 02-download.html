@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/css/tokens.css?v=9">
-<link rel="stylesheet" href="assets/css/base.css?v=9">
-<link rel="stylesheet" href="assets/css/layout.css?v=9">
-<link rel="stylesheet" href="assets/css/components.css?v=9">
+<link rel="stylesheet" href="assets/css/tokens.css?v=10">
+<link rel="stylesheet" href="assets/css/base.css?v=10">
+<link rel="stylesheet" href="assets/css/layout.css?v=10">
+<link rel="stylesheet" href="assets/css/components.css?v=10">
 </head>
 <body>
 <div class="app">
@@ -39,20 +39,66 @@
     <p class="eyebrow">Stage 02</p>
     <h1>Download the material</h1>
     <span class="freq">Every project</span>
-    <p class="lede">Juan puts the proxies and audio on Frame.io. You <b>download them and edit with the proxies</b> — the originals stay with Juan. You finish with every file in its folder, ready to cut.</p>
+    <p class="note">What you'll do: pull the proxies and audio from Frame.io into their folders, ready to cut.</p>
 
-    <p class="section-label">Do this</p>
-    <ol class="steps">
-      <li><span><span class="st">What you download</span><span class="sx">Proxies + audio — that's all you need. Not the originals; Juan keeps those.</span></span></li>
-      <li><span><span class="st">How you download</span><span class="sx"><b>Frame.io Drive</b> (recommended) — mount the project and copy. Or the Frame.io web Download button.</span></span></li>
-      <li><span><span class="st">Where it goes</span><span class="sx">Keep the folders as they are. Each proxy → its segment's <code>02_Footage/01_Originals/&lt;segment&gt;/Proxy</code>; audio → <code>03_Audio/01_Production</code>.</span></span></li>
-    </ol>
+    <div class="flow">
+      <div class="flow-head">
+        <span class="flow-counter">Step 1 of 3</span>
+        <button class="flow-back" aria-label="Previous step">← Back</button>
+      </div>
+      <div class="flow-bar"><div class="flow-bar-fill"></div></div>
+      <div class="flow-trail" aria-hidden="true"></div>
 
-    <p class="section-label spaced">Remember</p>
-    <div class="tips first">
-      <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Frame.io Drive is the fast lane — local cache, optimized transfer.</span></div>
-      <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>You edit with proxies; Juan relinks to the originals at the end.</span></div>
-      <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Don't rename or move folders — Resolve relinks by path, and Frame.io mirrors them.</span></div>
+      <div class="flow-deck">
+
+        <div class="fcard active" data-title="Download proxies + audio">
+          <div class="fc">
+            <p class="fc-t">Download proxies + audio</p>
+            <p class="fc-b">Pull what Juan put on Frame.io — <b>proxies + audio, that's all</b>. Not the originals; Juan keeps those.</p>
+            <button class="next-btn">Next <span aria-hidden="true">✓</span></button>
+          </div>
+        </div>
+
+        <div class="fcard" data-title="Use Frame.io Drive">
+          <div class="fc">
+            <p class="fc-t">Use Frame.io Drive</p>
+            <p class="fc-b"><b>Frame.io Drive</b> (recommended) — mount the project and copy. Or the Frame.io web Download button.</p>
+            <button class="why">Why Drive? ›</button>
+            <p class="why-body">It's the fast lane — local cache and optimized transfer. The web button works too.</p>
+            <button class="next-btn">Next <span aria-hidden="true">✓</span></button>
+          </div>
+        </div>
+
+        <div class="fcard" data-title="Drop files into their folders">
+          <div class="fc">
+            <p class="fc-t">Drop files into their folders</p>
+            <p class="fc-b">Keep the folders exactly as they are — drop each file into its matching one.</p>
+            <div class="path">Proxy <span class="sep">▸</span> 02_Footage <span class="sep">▸</span> 01_Originals <span class="sep">▸</span> &lt;segment&gt; <span class="sep">▸</span> Proxy</div>
+            <div class="path">Audio <span class="sep">▸</span> 03_Audio <span class="sep">▸</span> 01_Production</div>
+            <button class="next-btn">Finish <span aria-hidden="true">✓</span></button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="flow-done">
+        <p class="fd-ok">✓ Stage done</p>
+        <p class="fd-t">Proxies and audio are in place, ready to cut</p>
+        <a class="fd-next" href="03-tasks-time.html">Next: 03 · Tasks &amp; time →</a>
+      </div>
+    </div>
+
+    <p class="shelf-label">Reference — open only if you need it</p>
+    <div class="ref" id="acc">
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Watch-outs</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <div class="tips first">
+            <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>You edit with proxies; Juan relinks to the originals at the end.</span></div>
+            <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Don't rename or move folders — Resolve relinks by path, and Frame.io mirrors them.</span></div>
+          </div>
+        </div></div></div>
+      </div>
     </div>
 
     <nav class="pagenav">
@@ -63,6 +109,6 @@
   </main>
 </div>
 
-<script src="assets/js/app.js?v=9"></script>
+<script src="assets/js/app.js?v=10"></script>
 </body>
 </html>

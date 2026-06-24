@@ -8,6 +8,60 @@
     menuBtn.addEventListener('click', function(){ sidebar.classList.toggle('open'); });
   }
 
+  // Dismissible banners (every page)
+  document.querySelectorAll('.banner .bx').forEach(function(b){
+    b.addEventListener('click', function(){ var bn = b.closest('.banner'); if(bn) bn.style.display = 'none'; });
+  });
+
+  // Focus-mode flow: one action card at a time (no persistence — resets each visit)
+  var flow = document.querySelector('.flow');
+  if(flow){
+    var fcards = [].slice.call(flow.querySelectorAll('.fcard'));
+    var total = fcards.length;
+    var cur = 0;
+    var counter = flow.querySelector('.flow-counter');
+    var bar = flow.querySelector('.flow-bar-fill');
+    var trail = flow.querySelector('.flow-trail');
+    var deck = flow.querySelector('.flow-deck');
+    var doneEl = flow.querySelector('.flow-done');
+    function trailLine(title){
+      var d = document.createElement('div'); d.className = 'done';
+      d.innerHTML = '<span class="tk" aria-hidden="true">✓</span><span class="tt"></span>';
+      d.querySelector('.tt').textContent = title;
+      return d;
+    }
+    function renderFlow(){
+      fcards.forEach(function(c, i){ c.classList.toggle('active', i === cur); });
+      if(counter) counter.textContent = 'Step ' + (cur + 1) + ' of ' + total;
+      if(bar) bar.style.width = Math.round((cur + 1) / total * 100) + '%';
+      if(trail){
+        trail.innerHTML = '';
+        for(var i = 0; i < cur; i++){ trail.appendChild(trailLine(fcards[i].getAttribute('data-title') || '')); }
+      }
+    }
+    flow.querySelectorAll('.next-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(cur < total - 1){ cur++; renderFlow(); }
+        else {
+          if(trail) trail.appendChild(trailLine(fcards[cur].getAttribute('data-title') || ''));
+          if(deck) deck.style.display = 'none';
+          if(doneEl) doneEl.classList.add('show');
+          if(counter) counter.textContent = 'Done';
+          if(bar) bar.style.width = '100%';
+        }
+      });
+    });
+    var backBtn = flow.querySelector('.flow-back');
+    if(backBtn) backBtn.addEventListener('click', function(){
+      if(deck && deck.style.display === 'none'){ deck.style.display = ''; if(doneEl) doneEl.classList.remove('show'); }
+      if(cur > 0){ cur--; renderFlow(); }
+    });
+    flow.querySelectorAll('.why').forEach(function(b){
+      b.addEventListener('click', function(){ var w = b.nextElementSibling; if(w) w.classList.toggle('open'); });
+    });
+    renderFlow();
+  }
+
   // Accordion pages only
   if(!document.querySelector('.head')) return;
 

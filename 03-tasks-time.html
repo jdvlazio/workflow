@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/css/tokens.css?v=9">
-<link rel="stylesheet" href="assets/css/base.css?v=9">
-<link rel="stylesheet" href="assets/css/layout.css?v=9">
-<link rel="stylesheet" href="assets/css/components.css?v=9">
+<link rel="stylesheet" href="assets/css/tokens.css?v=10">
+<link rel="stylesheet" href="assets/css/base.css?v=10">
+<link rel="stylesheet" href="assets/css/layout.css?v=10">
+<link rel="stylesheet" href="assets/css/components.css?v=10">
 </head>
 <body>
 <div class="app">
@@ -36,73 +36,109 @@
       <span class="step soon"><span class="dot">04</span><span class="lb">Edit</span></span>
     </nav>
 
+    <div class="banner">
+      <span><a href="#setup">First time on this machine? Set up TMetric once →</a></span>
+      <button class="bx" aria-label="Dismiss">×</button>
+    </div>
+
     <p class="eyebrow">Stage 03</p>
     <h1>Tasks &amp; time</h1>
     <span class="freq">Every project</span>
-    <p class="lede">Before you edit, everything runs through <b>Asana</b>. Find your task, open the project Juan sends, and track your time on it with <b>TMetric</b>. First project on this machine? Do the one-time setup at the bottom.</p>
+    <p class="note">What you'll do: open your task, load the project, start the timer, verify it's right.</p>
 
-    <p class="section-label">Each task</p>
-    <ol class="steps">
-      <li><span><span class="st">Open your task in Asana</span><span class="sx">Read the <b>brief</b> in the description and note the due date.</span></span></li>
-      <li><span><span class="st">Open the project file</span><span class="sx">Juan attaches the <code>.drp</code> with everything loaded. Save it in your project's <code>01_Project/01_Resolve</code> and open it — the proxies relink.</span></span></li>
-      <li><span><span class="st">Start the timer from the task</span><span class="sx">Click the green <b>Start timer</b> button on the Asana task.</span></span></li>
-      <li><span><span class="st">Set the project the first time</span><span class="sx">On a project's first task, pick the project in TMetric so the time logs to the right place.</span></span></li>
-      <li><span><span class="st">Verify, then keep both open</span><span class="sx">Check <code>task · tag · project</code> are right in the browser. Keep TMetric + Asana open and stop/play the timer as you work. Download isn't timed — time runs on Selections, Editing and Adjustments.</span></span></li>
-    </ol>
+    <div class="flow">
+      <div class="flow-head">
+        <span class="flow-counter">Step 1 of 4</span>
+        <button class="flow-back" aria-label="Previous step">← Back</button>
+      </div>
+      <div class="flow-bar"><div class="flow-bar-fill"></div></div>
+      <div class="flow-trail" aria-hidden="true"></div>
 
-    <p class="section-label spaced">Reference · the board</p>
-    <p class="note">Every project is one board with three columns. Open one to see its tasks — each named <code>prefix | name | version</code>.</p>
-    <div class="acc" id="acc">
+      <div class="flow-deck">
 
-      <div class="item">
-        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">Pre</span><span class="tag">prep, before the edit</span></button>
-        <div class="body"><div class="inner"><div class="pad">
-          <ul class="legend">
-            <li><span class="lc">D&nbsp;|</span><span><b>Download</b> — pull the material. Not time-tracked; just mark it done so the stage is clear.</span></li>
-          </ul>
-        </div></div></div>
+        <div class="fcard active" data-title="Open your task in Asana">
+          <div class="fc">
+            <p class="fc-t">Open your task in Asana</p>
+            <p class="fc-b">Read the <b>brief</b> in the description and note the due date.</p>
+            <button class="next-btn">Next <span aria-hidden="true">✓</span></button>
+          </div>
+        </div>
+
+        <div class="fcard" data-title="Save &amp; open the project file">
+          <div class="fc">
+            <p class="fc-t">Save &amp; open the project file</p>
+            <p class="fc-b">Drop Juan's <code>.drp</code> into this folder and open it — the proxies relink.</p>
+            <div class="path">01_Project <span class="sep">▸</span> 01_Resolve</div>
+            <button class="why">Why do they relink? ›</button>
+            <p class="why-body">You kept the folder structure, so Resolve finds each proxy by its path automatically.</p>
+            <button class="next-btn">Next <span aria-hidden="true">✓</span></button>
+          </div>
+        </div>
+
+        <div class="fcard" data-title="Start the timer">
+          <div class="fc">
+            <p class="fc-t">Start the timer</p>
+            <p class="fc-b">Click the green <b>Start timer</b> button on the Asana task.</p>
+            <div class="branch">
+              <span class="bl">First time only</span>
+              <p>First project on this machine? Pick the project in TMetric once, so time logs to the right place.</p>
+            </div>
+            <button class="next-btn">Next <span aria-hidden="true">✓</span></button>
+          </div>
+        </div>
+
+        <div class="fcard" data-title="Verify task · tag · project">
+          <div class="fc">
+            <p class="fc-t">Verify task · tag · project</p>
+            <p class="fc-b">Check all three are right in the browser, then keep TMetric + Asana open as you work.</p>
+            <div class="watch"><span aria-hidden="true">⚠</span><span>Wrong <code>task·tag·project</code> means time logged in the wrong place. Don't trust the timer blindly.</span></div>
+            <button class="next-btn">Finish <span aria-hidden="true">✓</span></button>
+          </div>
+        </div>
+
       </div>
 
-      <div class="item">
-        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">Post</span><span class="tag">the edit — your work</span></button>
-        <div class="body"><div class="inner"><div class="pad">
-          <ul class="legend">
-            <li><span class="lc">S&nbsp;|</span><span><b>Selections</b> — narrow down the footage.</span></li>
-            <li><span class="lc">E&nbsp;|</span><span><b>Editing</b> — the first cut (v1).</span></li>
-            <li><span class="lc">AD&nbsp;|</span><span><b>Adjustments</b> — revision rounds (v2, v3…).</span></li>
-          </ul>
-        </div></div></div>
+      <div class="flow-done">
+        <p class="fd-ok">✓ Stage done</p>
+        <p class="fd-t">Your task is set up and the clock is running</p>
+        <span class="fd-next soon">Next: 04 · Editing — soon</span>
       </div>
-
-      <div class="item">
-        <button class="head" aria-expanded="false"><span class="chev"></span><span class="fn">Deliver</span><span class="tag">exports for the client</span></button>
-        <div class="body"><div class="inner"><div class="pad">
-          <ul class="legend">
-            <li><span class="lc">D&nbsp;|</span><span><b>Deliver</b> — the client export.</span></li>
-          </ul>
-        </div></div></div>
-      </div>
-
     </div>
 
-    <p class="section-label spaced">One-time setup · once per machine</p>
-    <div class="acc" id="acc2">
+    <p class="shelf-label">Reference — open only if you need it</p>
+    <div class="ref" id="acc">
+
       <div class="item">
-        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Install TMetric (once)</span><span class="tag">desktop + browser extension</span></button>
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">The board</span><span class="tag">task prefixes</span></button>
         <div class="body"><div class="inner"><div class="pad">
           <ul class="legend">
-            <li><span class="lc">1</span><span><b>TMetric Desktop (Mac)</b> — tracks idle time. In settings, set <b>Detect idle time → Ask me</b> with a 5-minute timeout. Step away that long and it asks what to do with the time — keep, discard, or mark as a break.</span></li>
-            <li><span class="lc">2</span><span><b>TMetric browser extension</b> — install it, turn on the Asana integration (TMetric → Integrations → Asana), and refresh Asana. A green Start timer button appears on every task.</span></li>
+            <li><span class="lc">Pre</span><span><b>D</b> · Download — not time-tracked; just mark it done.</span></li>
+            <li><span class="lc">Post</span><span><b>S</b> Selections · <b>E</b> Editing · <b>AD</b> Adjustments — your work. <b>Time runs here.</b></span></li>
+            <li><span class="lc">Deliver</span><span><b>D</b> · Deliver — the client export.</span></li>
           </ul>
         </div></div></div>
       </div>
-    </div>
 
-    <p class="section-label spaced">Remember</p>
-    <div class="tips first">
-      <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Read the <b>brief</b> before you touch anything.</span></div>
-      <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Keep TMetric + Asana open in the browser the whole session.</span></div>
-      <div class="tip no"><span class="ic" aria-hidden="true">–</span><span>Don't trust the timer blindly — wrong <code>task · tag · project</code> means time logged in the wrong place.</span></div>
+      <div class="item" id="setup">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">One-time setup</span><span class="tag">install TMetric</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <ul class="legend">
+            <li><span class="lc">1</span><span><b>TMetric Desktop (Mac)</b> — tracks idle time. Set <b>Detect idle time → Ask me</b>, 5-minute timeout.</span></li>
+            <li><span class="lc">2</span><span><b>Browser extension</b> — install it, turn on the Asana integration (TMetric → Integrations → Asana), refresh Asana. A green Start timer button appears on each task.</span></li>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <div class="item">
+        <button class="head" aria-expanded="false"><span class="chev"></span><span class="rl">Watch-outs</span></button>
+        <div class="body"><div class="inner"><div class="pad">
+          <div class="tips first">
+            <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Read the <b>brief</b> before you touch anything.</span></div>
+            <div class="tip ok"><span class="ic" aria-hidden="true">+</span><span>Keep TMetric + Asana open the whole session.</span></div>
+          </div>
+        </div></div></div>
+      </div>
+
     </div>
 
     <nav class="pagenav">
@@ -113,6 +149,6 @@
   </main>
 </div>
 
-<script src="assets/js/app.js?v=9"></script>
+<script src="assets/js/app.js?v=10"></script>
 </body>
 </html>
