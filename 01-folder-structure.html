@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/css/tokens.css?v=10">
-<link rel="stylesheet" href="assets/css/base.css?v=10">
-<link rel="stylesheet" href="assets/css/layout.css?v=10">
-<link rel="stylesheet" href="assets/css/components.css?v=10">
+<link rel="stylesheet" href="assets/css/tokens.css?v=11">
+<link rel="stylesheet" href="assets/css/base.css?v=11">
+<link rel="stylesheet" href="assets/css/layout.css?v=11">
+<link rel="stylesheet" href="assets/css/components.css?v=11">
 </head>
 <body>
 <div class="app">
@@ -40,7 +40,7 @@
     <h1>Project folder structure</h1>
 
     <span class="freq">Reference</span>
-    <p class="lede">Where every file lives. Folders are organized by <b>type of media</b>, not by stage. Type a format to find its folder, or browse the full structure below.</p>
+    <p class="lede">Folders are organized by <b>type of media</b>, not by stage. Find a file's home — search it, or pick what it is.</p>
 
     <p class="section-label">Find where a file goes</p>
     <div class="search">
@@ -56,14 +56,11 @@
     <p class="hint" id="hint" role="status" aria-live="polite" hidden></p>
     <p class="noresults" id="noresults" role="status" aria-live="polite" hidden>No match — try a format like <code>.mov</code>, or browse the folders below.</p>
 
-    <p class="section-label spaced">Decision rules</p>
-    <ul class="rules">
-      <li><b>Did your team shoot / record it?</b> &nbsp; video → <code>02_Footage/01_Originals</code> &nbsp;·&nbsp; audio → <code>03_Audio/01_Production</code></li>
-      <li><b>Acquired media (bought or given)?</b> &nbsp; video → Stock / AI / Provided &nbsp;·&nbsp; audio → Music / SFX / VO &nbsp;·&nbsp; photo → <code>04_Graphics/03_Stills</code></li>
-      <li><b>Something you rendered?</b> &nbsp; client sees it → <code>00_Deliver</code> &nbsp;·&nbsp; internal only → <code>05_Intermediates</code></li>
-      <li><b>A graphic asset?</b> &nbsp; raw ingredient → <code>04_Graphics/01_Resources</code> &nbsp;·&nbsp; your export → <code>04_Graphics/02_Built</code></li>
-      <li><b>Paperwork or a Frame.io EDL?</b> &nbsp; → <code>06_Documents</code></li>
-    </ul>
+    <p class="section-label spaced">Not sure? Pick what it is</p>
+    <div class="router" id="router">
+      <div class="router-trail" aria-hidden="true"></div>
+      <div class="router-body"></div>
+    </div>
 
     <div class="head-row spaced-row">
       <p class="section-label">Browse the full structure</p>
@@ -221,7 +218,7 @@
   </main>
 </div>
 
-<script src="assets/js/formats.js?v=10"></script>
-<script src="assets/js/app.js?v=10"></script>
+<script src="assets/js/formats.js?v=11"></script>
+<script src="assets/js/app.js?v=11"></script>
 </body>
 </html>

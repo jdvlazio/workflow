@@ -62,6 +62,77 @@
     renderFlow();
   }
 
+  // File router (Stage 01): pick what the file is -> its folder. One question at a time.
+  var router = document.getElementById('router');
+  if(router){
+    var TREE = {
+      root: { q: 'What is this file?', opts: [
+        { label: 'We shot or recorded it', to: 'shot' },
+        { label: 'We got it (bought, given, stock, AI)', to: 'acquired' },
+        { label: 'We rendered or exported it', to: 'rendered' },
+        { label: 'A graphic asset (logo, title, photo)', to: 'graphic' },
+        { label: 'Paperwork or a Frame.io EDL', dest: ['06_Documents'] }
+      ]},
+      shot: { q: 'Shot or recorded — which?', opts: [
+        { label: 'Video', dest: ['02_Footage/01_Originals'], note: 'Never rename it — Resolve links by path.' },
+        { label: 'Audio', dest: ['03_Audio/01_Production'], note: 'Raw on-set sound.' }
+      ]},
+      acquired: { q: 'What kind of media?', opts: [
+        { label: 'Video', dest: ['02_Footage/02_Stock','02_Footage/03_AI','02_Footage/04_Provided'], note: 'Pick by source.' },
+        { label: 'Audio', dest: ['03_Audio/04_Music','03_Audio/03_SFX','03_Audio/02_VO'], note: 'Pick by role.' },
+        { label: 'Photo', dest: ['04_Graphics/03_Stills'], note: 'Including client or photographer photos.' }
+      ]},
+      rendered: { q: 'Who sees it?', opts: [
+        { label: 'The client sees it', dest: ['00_Deliver'], note: 'Master vs Versions inside.' },
+        { label: 'Internal only', dest: ['05_Intermediates'], note: "If the edit relinks to it and you can't re-create it, it's a kept source instead → e.g. 03_Audio/05_Processed." }
+      ]},
+      graphic: { q: 'Raw, or made by you?', opts: [
+        { label: 'Raw ingredient (logo, font, reference)', dest: ['04_Graphics/01_Resources'] },
+        { label: 'Your export (title, lower-third)', dest: ['04_Graphics/02_Built'] }
+      ]}
+    };
+    var rNode = 'root', rDest = null, rHist = [];
+    function pathChip(p){
+      var parts = p.split('/'), h = '<div class="path">';
+      parts.forEach(function(seg, i){ h += (i ? ' <span class="sep">&#9656;</span> ' : '') + seg; });
+      return h + '</div>';
+    }
+    function rRender(){
+      var trail = router.querySelector('.router-trail');
+      trail.innerHTML = rHist.map(function(h, i){
+        return (i ? '<span class="rcrumb-sep">&#8250;</span>' : '') + '<button class="rcrumb" data-i="' + i + '">' + h.label + '</button>';
+      }).join('');
+      var body = router.querySelector('.router-body'), html;
+      if(rDest){
+        html = '<p class="router-q">Put it here</p><div class="router-dest-paths">' + rDest.dest.map(pathChip).join('') + '</div>';
+        if(rDest.note) html += '<p class="router-why">' + rDest.note + '</p>';
+        html += '<button class="router-reset">Start over</button>';
+      } else {
+        var node = TREE[rNode];
+        html = '<p class="router-q">' + node.q + '</p><div class="router-opts">' +
+          node.opts.map(function(o, i){ return '<button class="router-opt" data-i="' + i + '">' + o.label + '</button>'; }).join('') + '</div>';
+      }
+      body.innerHTML = html;
+    }
+    router.addEventListener('click', function(e){
+      var opt = e.target.closest('.router-opt');
+      if(opt){
+        var o = TREE[rNode].opts[+opt.getAttribute('data-i')];
+        rHist.push({ label: o.label, node: rNode });
+        if(o.to){ rNode = o.to; rDest = null; } else { rDest = o; }
+        rRender(); return;
+      }
+      var crumb = e.target.closest('.rcrumb');
+      if(crumb){
+        var idx = +crumb.getAttribute('data-i');
+        rNode = rHist[idx].node; rDest = null; rHist = rHist.slice(0, idx);
+        rRender(); return;
+      }
+      if(e.target.closest('.router-reset')){ rNode = 'root'; rDest = null; rHist = []; rRender(); }
+    });
+    rRender();
+  }
+
   // Accordion pages only
   if(!document.querySelector('.head')) return;
 
