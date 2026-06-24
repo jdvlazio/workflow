@@ -1,24 +1,24 @@
 /* tokens.css — design system: the single source of colors, type, spacing.
    Change a value here and it propagates everywhere. */
 :root{
-  /* surfaces */
-  --bg:#0e0e0d;
-  --surf:#15140f;
-  --surf2:#1f1d18;
-  --line:#2d2b26;
-  --line2:#3a3833;
-  /* text */
-  --text:#ededea;
-  --text2:#cfcdc6;
-  --muted:#a4a29a;
-  --faint:#8c8a80;
+  /* surfaces — warm charcoal, lifted for clearer elevation */
+  --bg:#100f0d;
+  --surf:#1b1916;
+  --surf2:#25221d;
+  --line:#312e28;
+  --line2:#423e37;
+  /* text — higher contrast for readability */
+  --text:#f1f0ea;
+  --text2:#d9d7cf;
+  --muted:#b4b0a6;
+  --faint:#8f8b81;
   /* accent + semantic */
-  --accent:#cbb79c;
-  --accent-bg:#241e15;
+  --accent:#d4bd9c;
+  --accent-bg:#2a2218;
   --ok:#9cc88a;
-  --no:#e0a08f;
-  --no-bg:#2a1714;
-  --no-line:#5a2f26;
+  --no:#e3a594;
+  --no-bg:#2e1815;
+  --no-line:#5f3128;
   /* families */
   --display:'Bricolage Grotesque',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
