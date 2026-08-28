@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Clip colors · Workflow — Juan Villa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css?v=12">
+<link rel="stylesheet" href="assets/css/base.css?v=12">
+<link rel="stylesheet" href="assets/css/layout.css?v=12">
+<link rel="stylesheet" href="assets/css/components.css?v=12">
+<style>
+/* clip-color legend — swatches to be sampled from Resolve's Set Clip Color dots */
+.cc-list{display:flex;flex-direction:column;gap:var(--s2);margin:0 0 var(--s7);max-width:760px}
+.cc{display:grid;grid-template-columns:auto 190px 1fr;align-items:start;gap:var(--s4);
+    background:var(--surf);border:1px solid var(--line);border-radius:var(--radius);
+    padding:var(--s4) var(--s5)}
+.cc-dot{width:18px;height:18px;border-radius:50%;margin-top:3px;
+        box-shadow:inset 0 0 0 1px rgba(0,0,0,.45)}
+.cc-en{font-family:var(--display);font-size:var(--fs-h3);font-weight:600;line-height:1.2}
+.cc-es{display:block;font-family:var(--display);font-size:var(--fs-caption);font-weight:400;
+        color:var(--faint);margin-top:2px}
+.cc-what{font-size:var(--fs-body);color:var(--text2);line-height:1.55}
+.cc-eg{display:block;font-size:var(--fs-caption);color:var(--muted);margin-top:var(--s2)}
+.cc-not{color:var(--no)}
+.cc-not::before{content:"\2715  ";font-weight:600}
+.cc-none{border-style:dashed;background:transparent}
+.cc-none .cc-dot{background:transparent;box-shadow:inset 0 0 0 1px var(--line2)}
+@media (max-width:720px){
+  .cc{grid-template-columns:auto 1fr;row-gap:var(--s2)}
+  .cc-what{grid-column:2}
+}
+.mock{background:var(--no-bg);border:1px solid var(--no-line);color:var(--no);
+      border-radius:var(--radius-sm);padding:var(--s3) var(--s4);margin:0 0 var(--s6);
+      font-size:var(--fs-caption);max-width:var(--measure)}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="bt">Workflow</span><span class="bs">Juan Villa</span></a>
+    <button class="menu-btn" aria-label="Toggle navigation">Stages</button>
+    <p class="navlabel">Stages</p>
+    <nav class="nav">
+      <a class="nav-item" href="01-folder-structure.html"><span class="num">01</span> Folder structure</a>
+      <a class="nav-item" href="02-download.html"><span class="num">02</span> Download</a>
+      <a class="nav-item" href="03-tasks-time.html"><span class="num">03</span> Tasks &amp; time</a>
+      <a class="nav-item active" href="04-clip-colors.html"><span class="num">04</span> Clip colors</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <nav class="stepper" aria-label="Progress">
+      <a class="step done" href="01-folder-structure.html"><span class="dot">01</span><span class="lb">Structure</span></a>
+      <a class="step done" href="02-download.html"><span class="dot">02</span><span class="lb">Files</span></a>
+      <a class="step done" href="03-tasks-time.html"><span class="dot">03</span><span class="lb">Tasks</span></a>
+      <a class="step current" href="04-clip-colors.html"><span class="dot">04</span><span class="lb">Colors</span></a>
+    </nav>
+
+    <p class="mock"><b>DOTS ARE APPROXIMATE</b> — the meanings are final. The swatches still have to
+      be sampled from Resolve's own Set Clip Color menu so they match what you see in the app.</p>
+
+    <p class="eyebrow">Stage 04</p>
+    <h1>Clip colors</h1>
+    <span class="freq">Every wedding</span>
+    <p class="note">Colors are how the edit finds its material. Paint every clip you keep — the color
+      says what it is, so nobody has to scrub the timeline to find the first look.</p>
+
+    <p class="section-label">How to paint a clip</p>
+    <p class="note">Select the clip (or several), then <b>Mark ▸ Set Clip Color</b> — or right-click
+      the clip and pick <b>Clip Color</b>. Resolve shows these names in English; the grey name under
+      each one is the Spanish Juan sees on his machine.</p>
+
+    <p class="section-label spaced">The palette</p>
+    <p class="note">Nine colors, in the order the day happens. These are the only ones we use —
+      anything else in that menu is not part of the system.</p>
+
+    <div class="cc-list">
+
+      <div class="cc">
+        <span class="cc-dot" style="background:#c8b28a"></span>
+        <span class="cc-en">Beige<span class="cc-es">beige</span></span>
+        <span class="cc-what">Day or night before the wedding.
+          <span class="cc-eg">rehearsal dinner, family arriving, welcome party</span></span>
+      </div>
+
+      <div class="cc">
+        <span class="cc-dot" style="background:#d96f9a"></span>
+        <span class="cc-en">Pink<span class="cc-es">rosado</span></span>
+        <span class="cc-what">The bride — anything that is about her.
+          <span class="cc-eg">bridal party, mom dressing, getting ready, portraits of her alone</span></span>
+      </div>
+
+      <div class="cc">
+        <span class="cc-dot" style="background:#8e5fa8"></span>
+        <span class="cc-en">Purple<span class="cc-es">morado</span></span>
+        <span class="cc-what">The groom — his side of the morning.
+          <span class="cc-eg">groomsmen, getting ready, portraits of him alone</span></span>
+      </div>
+
+      <div class="cc">
+        <span class="cc-dot" style="background:#d99a4e"></span>
+        <span class="cc-en">Orange<span class="cc-es">naranja</span></span>
+        <span class="cc-what">Ceremony, end to end.
+          <span class="cc-eg">from guests walking in to the couple walking out</span></span>
+      </div>
+
+      <div class="cc">
+        <span class="cc-dot" style="background:#a86fc4"></span>
+        <span class="cc-en">Violet<span class="cc-es">violeta</span></span>
+        <span class="cc-what">The couple together.
+          <span class="cc-eg">first look, kissing, photo session, cutting the cake</span>
+          <span class="cc-eg cc-not">not the dances, not the party — those are Navy</span></span>
+      </div>
+
+      <div class="cc">
+        <span class="cc-dot" style="background:#c2a37a"></span>
+        <span class="cc-en">Tan<span class="cc-es">canela</span></span>
+        <span class="cc-what">Guests.
+          <span class="cc-eg">messages to camera, their photo sessions, cocktail hour</span></span>
+      </div>
+
+      <div class="cc">
+        <span class="cc-dot" style="background:#7d8a3c"></span>
+        <span class="cc-en">Olive<span class="cc-es">verde oliva</span></span>
+        <span class="cc-what">Reception.
+          <span class="cc-eg">couple's entrance, dinner, speeches</span></span>
+      </div>
+
+      <div class="cc">
+        <span class="cc-dot" style="background:#3d5a99"></span>
+        <span class="cc-en">Navy<span class="cc-es">azul marino</span></span>
+        <span class="cc-what">Dancing — first dances and the party.
+          <span class="cc-eg">first dance, parent dances, everything on the dance floor</span></span>
+      </div>
+
+      <div class="cc">
+        <span class="cc-dot" style="background:#9cc04a"></span>
+        <span class="cc-en">Lime<span class="cc-es">lima</span></span>
+        <span class="cc-what">Scenery — the place, with nobody in it.
+          <span class="cc-eg">venue, décor, tables, floral arrangements</span>
+          <span class="cc-eg cc-not">the moment a person is the subject, it belongs to their color</span></span>
+      </div>
+
+      <div class="cc cc-none">
+        <span class="cc-dot"></span>
+        <span class="cc-en">No color<span class="cc-es">sin color</span></span>
+        <span class="cc-what">Doesn't fit any of them? Leave it grey.
+          <span class="cc-eg">an unpainted clip is a question for Juan, not a mistake</span></span>
+      </div>
+
+    </div>
+
+    <p class="section-label spaced">Two rules</p>
+    <div class="tips">
+      <p class="tip"><b>Paint only what you keep.</b> The color is the selection — a clip you
+        wouldn't put in the edit stays grey.</p>
+      <p class="tip"><b>One color per clip.</b> If a take spans two moments, pick the one it
+        belongs to in the story, not the one it starts in.</p>
+    </div>
+
+    <nav class="pagenav">
+      <a href="03-tasks-time.html">← Tasks &amp; time</a>
+      <a href="index.html">All stages</a>
+    </nav>
+
+  </main>
+</div>
+<script src="assets/js/app.js?v=12"></script>
+</body>
+</html>
